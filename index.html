@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Vikas M - RPA Developer, Python and AI Enthusiast" />
+  <title>Vikas M | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar" role="navigation">
+    <div class="nav-logo" aria-label="Portfolio Logo">Vikas M</div>
+    <button class="nav-toggle" aria-label="Toggle navigation menu">
+      <span class="hamburger"></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="background-shapes" aria-hidden="true">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+  </div>
+
+  <main>
+    <section id="home" class="section home-section">
+      <div class="home-container">
+        <div class="home-text">
+          <h1>Hello, <span class="typing" aria-hidden="true"></span></h1>
+          <p class="subtitle"> Software Developer @Novigo Solutions</p>
+          <div class="btn-group">
+            <a href="assets/Vikas_M_Resume.pdf" target="_blank" class="btn">Download Resume</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+        </div>
+        <div class="home-image">
+          <img src="assets/images/profile.png" alt="Profile picture of Vikas M" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <h2>About Me</h2>
+      <p>
+        <ul>
+        <li>Software Developer with over 2 years of experience in Automation and Data Field.</li><br>
+        <li><b>3x </b>UiPath Certified Developer (UIADP, UIAIA, UIABA) and <b>6x</b> UiPath Community Awardee</li><br>
+        <li>Skilled in C#, Python, SQL, and Azure AI. Passionate about cloud technologies, DevOps, and data engineering.</li><br>
+        <li>Collaborative and fast learner thriving in dynamic tech environments.</li><br>
+        <li>My aspirations include delving deeper into the realms of AI/ML and Data Engineering, 
+            where I aim to leverage these technologies to drive transformative change and unlock new opportunities for growth and innovation.</li>
+        </ul>
+        </p>
+    </section>
+
+    <section id="projects" class="section projects-section">
+      <h2>Projects</h2>
+      <div class="project-list">
+        <div class="project-card" tabindex="0" aria-label="Jarvis Voice Assistant project">
+          <div class="project-icon"><i class="fas fa-robot"></i></div>
+          <h3>Jarvis Voice Assistant</h3>
+          <p>Speech recognition, text-to-speech, and task automation using Python.</p>
+        </div>
+        <div class="project-card" tabindex="0" aria-label="Local File Sharing Web App project">
+          <div class="project-icon"><i class="fas fa-qrcode"></i></div>
+          <h3>Local File Sharing Web App</h3>
+          <p>Python-based server with QR code mobile access and responsive UI.</p>
+        </div>
+        <div class="project-card" tabindex="0" aria-label="Pothole Detection project">
+          <div class="project-icon"><i class="fas fa-car-crash"></i></div>
+          <h3>Pothole Detection for Road Safety</h3>
+          <p>YOLOv5 model for pothole detection with mobile interface and maps integration.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section experience-section">
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <h3>Software Engineer - Novigo Solutions</h3>
+        <p><span class="company">Novigo Solutions</span> <span class="date">May 2023 – Present</span></p>
+        <ul>
+          <li>Led automation for 8+ client processes across logistics, HR, and banking.</li>
+          <li>Built invoice and PO automation with 90% touchless processing.</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3>Full Stack Web Development Intern - Varcons Inc.</h3>
+        <p><span class="company">Varcons Inc.</span> <span class="date">Apr 2023 – May 2023</span></p>
+        <ul>
+          <li>Redesigned NGO website using MERN stack and Figma.</li>
+          <li>Implemented SQL databases for data collection and sorting.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <h2>Contact Me</h2>
+      <form id="contact-form" novalidate>
+        <div class="form-group">
+          <input type="text" id="name" name="name" required autocomplete="name" />
+          <label for="name">Name</label>
+          <span class="input-bar"></span>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" required autocomplete="email" />
+          <label for="email">Email</label>
+          <span class="input-bar"></span>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" rows="6" required></textarea>
+          <label for="message">Message</label>
+          <span class="input-bar"></span>
+        </div>
+        <button type="submit" class="btn btn-submit">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p>Linkedin Profile:<a href="https://www.linkedin.com/in/vikasm-01/">My Linkedin Profile</a></p>
+        <p>Email: <a href="mailto:acharyavikas231@gmail.com">acharyavikas231@gmail.com</a></p>
+        <p>Phone: <a href="tel:+919741812636">+91-9741812636</a></p>
+      </div>
+    </section>
+  </main>
+
+  <button class="dark-mode-toggle" aria-label="Toggle dark mode">🌓</button>
+  <script src="js/script.js"></script>
+</body>
+</html>

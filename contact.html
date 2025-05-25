@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Vikas M</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Contact</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card contact-card">
+      <h2 class="card-title">Get in Touch</h2>
+      <p>Feel free to reach out via phone, email, or this form.</p>
+
+      <div class="contact-info">
+        <p><strong>Phone:</strong> +91-9741812636</p>
+        <p><strong>Email:</strong> <a href="mailto:acharyavikas231@gmail.com">acharyavikas231@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vikasm-01/" target="_blank">linkedin.com/in/vikasm-01/</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/vikkydroid" target="_blank">github.com/vikkydroid</a></p>
+      </div>
+
+      <form id="contactForm" action="#" method="POST" novalidate>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email address" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      Built by Vikas M • <a href="https://github.com/vikkydroid" target="_blank">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
