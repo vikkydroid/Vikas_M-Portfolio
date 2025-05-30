@@ -1,8 +1,9 @@
 // ==============================
 // Typing Effect Setup
 // ==============================
+
 const typingText = document.querySelector('.typing');
-const words = ['I\'m Vikas', 'Am a Software Developer', 'Am a RPA Specialist', 'Am a Problem Solver'];
+const words = ["I'm Vikas", 'Am a Software Developer', 'Am a RPA Specialist', 'Am a Problem Solver'];
 let wordIndex = 0, charIndex = 0, isDeleting = false;
 
 function typeEffect() {
@@ -25,12 +26,15 @@ function typeEffect() {
     setTimeout(typeEffect, 1000);
   }
 }
+
 typeEffect();
 
 
+
 // ==============================
-// DOM Loaded: Section Reveal & Navigation Active State
+// Section Reveal & Navigation Highlight on Scroll
 // ==============================
+
 window.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section');
@@ -42,24 +46,26 @@ window.addEventListener('DOMContentLoaded', () => {
         const navItem = document.querySelector(`.nav-link[href="#${id}"]`);
 
         if (entry.isIntersecting) {
+          // Remove active class from all links and apply to the current one
           navLinks.forEach(link => link.classList.remove('active'));
           if (navItem) navItem.classList.add('active');
-          entry.target.classList.add('visible');
+          entry.target.classList.add('visible'); // Reveal section
         }
       });
     }, { threshold: 0.5 });
 
     sections.forEach(section => observer.observe(section));
   } else {
-    // Fallback for older browsers
+    // Fallback for browsers that don’t support IntersectionObserver
     sections.forEach(section => section.classList.add('visible'));
   }
 });
 
 
 // ==============================
-// Navbar Scroll Shadow
+// Navbar Shadow on Scroll
 // ==============================
+
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
   if (navbar) {
@@ -69,8 +75,9 @@ window.addEventListener('scroll', () => {
 
 
 // ==============================
-// Mobile Menu Toggle
+// Mobile Navigation Toggle
 // ==============================
+
 const navToggle = document.querySelector('.nav-toggle');
 const navLinksContainer = document.querySelector('.nav-links');
 
@@ -79,6 +86,7 @@ if (navToggle && navLinksContainer) {
     navLinksContainer.classList.toggle('mobile-show');
   });
 
+  // Smooth scroll and auto-close mobile nav on link click
   navLinksContainer.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
@@ -95,18 +103,22 @@ if (navToggle && navLinksContainer) {
 
 
 // ==============================
-// Contact Form Submission
+// Contact Form Submission Handler
 // ==============================
+
 const form = document.getElementById('contact-form');
+
 if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    // Basic validation check
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
 
+    // Simulated success feedback
     alert('Thank you for your message! I will get back to you soon.');
     form.reset();
   });
@@ -114,18 +126,42 @@ if (form) {
 
 
 // ==============================
-// Dark Mode Toggle
+// Dark Mode Toggle & Persistence
 // ==============================
+
 const darkModeToggle = document.querySelector('.dark-mode-toggle');
 
 if (darkModeToggle) {
-  // Initial load from localStorage
+  // Set theme from localStorage on initial load
   if (localStorage.getItem('darkMode') === 'enabled') {
     document.body.classList.add('dark-mode');
   }
 
+  // Toggle dark mode and save preference
   darkModeToggle.addEventListener('click', () => {
     const isDark = document.body.classList.toggle('dark-mode');
     localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
   });
 }
+
+
+// ==============================
+// Optional Enhancement: Scroll to Top Button (Bonus)
+// ==============================
+
+const scrollToTopBtn = document.createElement('button');
+scrollToTopBtn.className = 'scroll-top-btn';
+scrollToTopBtn.textContent = 'Scroll to top ⬆';
+scrollToTopBtn.setAttribute('aria-label', 'Scroll to top');
+document.body.appendChild(scrollToTopBtn);
+
+// Show/hide button based on scroll
+window.addEventListener('scroll', () => {
+  scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+
+// Smooth scroll to top on click
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+

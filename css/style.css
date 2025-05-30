@@ -1,153 +1,197 @@
-/* ========================================================================== */
-/* Reset and Base Styles */
-/* ========================================================================== */
+/* Universal box-sizing for consistent layout */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Smooth scrolling behavior for anchor links and padding for fixed header */
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Adjust based on navbar height */
 }
 
+/* Base body styles: font, background, text color, line height, and transitions */
 body {
-  font-family: 'Inter', sans-serif;
-  background: #0f172a;
-  color: #e0e0e0;
-  line-height: 1.6;
-  overflow-x: hidden;
-  position: relative;
-  min-height: 100vh;
-  transition: background 0.3s ease, color 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    background: #0f172a; /* Dark background for default mode */
+    color: #e0e0e0; /* Light text color for default mode */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    position: relative;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for dark mode */
 }
 
+/* Anchor link styles */
 a {
-  color: #38bdf8;
-  text-decoration: none;
-  transition: color 0.3s ease;
+    color: #38bdf8; /* Accent color for links */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
-a:hover {
-  text-decoration: underline;
-  color: #0ea5e9;
-}
 
 /* ========================================================================== */
 /* Navbar Styles */
 /* ========================================================================== */
+
 .navbar {
-  position: fixed;
-  top: 10px;
-  left: 20px;
-  right: 20px;
-  background: #1e293bcc;
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 3rem;
-  z-index: 999;
-  transition: box-shadow 0.3s ease;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+    background: #1e293bcc; /* Semi-transparent dark background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    z-index: 999; /* Ensure navbar is on top */
+    transition: box-shadow 0.3s ease;
+    border-radius: 10px; /* Slightly rounded corners for the navbar */
 }
 
+/* Navbar shadow when scrolled */
 .navbar.scrolled {
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
 }
 
 .nav-logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #38bdf8;
-  cursor: pointer;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #38bdf8; /* Logo accent color */
+    cursor: pointer;
 }
 
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
 }
 
 .nav-links li {
-  font-weight: 600;
-  font-size: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .nav-link {
-  color: #94a3b8;
-  position: relative;
-  padding: 0.3rem 0;
-  cursor: pointer;
-  transition: color 0.3s ease;
+    color: #94a3b8; /* Default link color */
+    position: relative;
+    padding: 0.3rem 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
+/* Underline effect for nav links */
 .nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  left: 0;
-  bottom: -3px;
-  background-color: #38bdf8;
-  transition: width 0.3s ease;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background-color: #38bdf8; /* Accent color for underline */
+    transition: width 0.3s ease;
 }
 
+/* Expand underline on hover and for active link */
 .nav-link:hover::after,
 .nav-link.active::after {
-  width: 100%;
+    width: 100%;
 }
 
+/* Active navigation link color */
 .nav-link.active {
-  color: #f1f5f9;
+    color: #f1f5f9; /* Lighter color for active link */
 }
 
+/* Hamburger toggle button for mobile */
 .nav-toggle {
-  display: none;
-  font-size: 1.8rem;
-  color: #38bdf8;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
+    display: none; /* Hidden by default, shown on mobile */
+    font-size: 1.8rem;
+    color: #38bdf8;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above other elements */
 }
 
 /* ========================================================================== */
-/* Sections Base */
+/* Section Base Styles */
 /* ========================================================================== */
+
 .section {
-  padding: 10rem 2rem;
-  max-width: 1200px;
-  margin: auto;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+    padding: 10rem 2rem; /* Ample vertical padding for sections */
+    max-width: 1200px;
+    margin: auto;
+    opacity: 0; /* Hidden by default for scroll-in animation */
+    transform: translateY(30px); /* Slightly moved down for scroll-in animation */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition for section visibility */
 }
 
+/* Visible state for sections (triggered by JavaScript) */
 .section.visible {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section h2 {
-  font-size: 2rem;
-  color: #38bdf8;
-  margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #38bdf8; /* Accent color for section headings */
+    margin-bottom: 1.5rem;
 }
 
 /* ========================================================================== */
 /* Home Section */
 /* ========================================================================== */
+
+/* Center entire section horizontally and vertically */
+.home-section {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  height: 100vh;           /* full viewport height */
+  padding: 0 40px;         /* horizontal padding for breathing room */
+  box-sizing: border-box;
+  background-color: #0f172a; /* optional: background to see centering */
+}
+
 .home-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: space-between; /* spread text and image */
+  flex-wrap: nowrap;  /* keep side-by-side */
   gap: 2rem;
+  max-width: 200%;   /* limit max width */
+  width: 100%;        /* allow responsiveness */
+  box-sizing: border-box;
+  padding: 0 10px;    /* small internal horizontal padding */
+}
+
+.home-text {
+  flex: 1 1 500px;    /* flexible width, minimum 500px */
+  min-width: 300px;
+  margin-left: 20px;  /* push text slightly from left */
 }
 
 .home-text h1 {
   font-size: 2.8rem;
+  color: #f1f5f9;
+  line-height: 1.3;
+  max-width: 600px;
+  margin-bottom: 1rem;
+}
+
+.typing-container {
+  display: inline-block;
+  width: 100%;
+  height: 3.4rem;      /* Reserve height for ~2 lines */
+  line-height: 2.7rem;
+  white-space: normal;
+  overflow-wrap: break-word;
+  overflow: hidden;    /* Prevent height jump */
+  color: #38bdf8;
+  font-weight: 600;
 }
 
 .subtitle {
@@ -161,6 +205,7 @@ a:hover {
   gap: 1rem;
 }
 
+/* Base button styles */
 .btn {
   background: #38bdf8;
   color: #0f172a;
@@ -170,6 +215,10 @@ a:hover {
   border: none;
   cursor: pointer;
   transition: transform 0.3s ease, background 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn:hover {
@@ -183,60 +232,141 @@ a:hover {
   color: #38bdf8;
 }
 
+.home-image {
+  flex: 0 0 280px;   /* fixed width container for image */
+  margin-right: 10px; /* push image slightly from right */
+}
+
 .home-image img {
   width: 280px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  display: block;
 }
 
+
 /* ========================================================================== */
-/* Floating Background Shapes */
+/* Floating Background Shapes (Decorative) */
 /* ========================================================================== */
+
 .background-shapes .shape {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.1;
-  z-index: 0;
-  animation: float 6s ease-in-out infinite;
+    position: absolute;
+    border-radius: 50%; /* Circular shapes */
+    opacity: 0.1; /* Subtle opacity */
+    z-index: 0; /* Behind content */
+    animation: float 6s ease-in-out infinite; /* Floating animation */
 }
 
 .shape1 {
-  width: 200px;
-  height: 200px;
-  top: 10%;
-  left: 5%;
-  background: #38bdf8;
+    width: 150px;
+    height: 150px;
+    top: 10%;
+    left: 1%;
+    background: #38bdf8;
 }
 
 .shape2 {
-  width: 150px;
-  height: 150px;
-  bottom: 15%;
-  right: 90%;
-  background: #0ea5e9;
+    width: 150px;
+    height: 150px;
+    bottom: 15%;
+    right: 90%;
+    background: #0ea5e9;
 }
 
 .shape3 {
-  width: 100px;
-  height: 100px;
-  top: 50%;
-  right: 10%;
-  background: #22d3ee;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    right: 10%;
+    background: #22d3ee;
 }
 
+/* Keyframe animation for floating effect */
 @keyframes float {
-  0%, 100% {
-    transform: translateY(10px);
-  }
-  50% {
-    transform: translateY(-200px);
-  }
+    0%, 100% {
+        transform: translateY(10px); /* Start and end slightly down */
+    }
+    50% {
+        transform: translateY(-200px); /* Move up in the middle of the animation */
+    }
 }
 
 /* ========================================================================== */
-/* About, Experience, Projects */
+/* About, Experience, Projects Sections (Shared Styles) */
 /* ========================================================================== */
-.about-section p,
+
+.about-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: #cbd5e1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #38bdf8;
+  text-shadow: 1px 1px 2px #0f172a;
+  margin-bottom: 1.2rem;
+}
+
+.about-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1 1 320px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.about-text strong {
+  color: #38bdf8;
+}
+
+.about-text blockquote {
+  margin-top: 2rem;
+  font-style: italic;
+  font-size: 0.9rem;       /* smaller font size */
+  color: #7dd3fc;
+  background: #1e293b;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  position: relative;
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+  box-shadow: 0 0 8px #38bdf8aa;
+  max-width: 300px;         /* limit width */
+  text-align: center;       /* center the text */
+  margin-left: auto;        /* center block horizontally */
+  margin-right: auto;
+}
+
+
+.about-skills {
+  flex: 0 0 280px;
+  border-left: 2px solid #334155;
+  padding-left: 1.5rem;
+}
+
+.about-skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.about-skills li {
+  margin-bottom: 1rem;
+  color: #cbd5e1;
+  cursor: default;
+  position: relative;
+  padding-bottom: 3px;
+}
+
 .experience-item ul,
 .project-card p {
   font-size: 1.1rem;
@@ -245,297 +375,645 @@ a:hover {
   max-width: 900px;
 }
 
+/* Projects section specific styles */
 .project-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   gap: 1.5rem;
-  justify-content: center;
+  justify-items: start; /* or center/stretch based on design */
+  width: 100%;
 }
 
 .project-card {
-  width: 280px;
+  width: 100%;
+  height: auto;
   text-align: center;
   padding: 1.5rem;
   background: #1e293b;
-  border-radius: 15px;
+  color: #facc15;
+  border-radius: 50px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* remove grid layout inside the card */
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
 }
 
+/* Distinct style for 'Languages Used' label in projects */
+.languages-header {
+    display: inline-block;
+    color: #38bdf8; /* Amber-400 from Tailwind palette */
+    font-weight: 600;
+    font-size: 1rem;
+    margin-right: 5px;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+/* Styling for the languages/tools list */
+.languages-list {
+    list-style-type: square;
+    padding-left: 1.2rem;
+    text-align: left;
+    margin: 0.3rem 0 0.8rem;
+    color: #e2e8f0; /* Light text */
+    font-size: 1rem;
+}
+
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+    transform: translateY(-10px); /* Lift card on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7); /* More prominent shadow on hover */
 }
 
 .project-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--accent-color, #5A67D8);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color, #38bdf8); /* Using CSS variable for icon color, fallback to accent */
 }
 
+/* Experience section specific styles */
 .experience-item {
-  background: #1e293b;
-  border-radius: 15px;
-  padding: 1.5rem 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    background: #1e293b; /* Darker background for experience items */
+    border-radius: 15px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
 }
 
 .experience-item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .experience-item h3 {
-  color: #38bdf8;
-  margin-bottom: 0.5rem;
+    color: #38bdf8; /* Accent color for job titles */
+    margin-bottom: 0.5rem;
 }
 
 .experience-item .company {
-  font-weight: 600;
-  color: #94a3b8;
+    font-weight: 600;
+    color: #94a3b8; /* Company name color */
 }
 
 .experience-item .date {
-  font-style: italic;
-  color: #64748b;
+    font-style: italic;
+    color: #64748b; /* Date range color */
+}
+.timeline {
+  position: relative;
+  margin-left: 40px; /* more space for the dot */
+  padding-left: 20px;
+  border-left: 3px solid #38bdf8; /* timeline line */
 }
 
-/* ========================================================================== */
-/* Contact Section */
-/* ========================================================================== */
-.contact-section {
-  max-width: 700px;
-  margin: 3rem auto;
-  padding-bottom: 5rem;
-}
-
-form#contact-form {
-  width: 100%;
-}
-
-.form-group {
+.timeline-item {
   position: relative;
   margin-bottom: 2rem;
 }
 
+.timeline-dot {
+  position: absolute;
+  left: -30px; /* move dot further left */
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  border: 3px solid #1e293b;
+}
+
+.timeline-content {
+  padding-left: 10px; /* add some padding so text doesn’t stick to the line */
+}
+
+
+.timeline-content .company {
+  font-weight: 600;
+  color: #94a3b8;
+  margin-right: 1em;
+}
+
+.timeline-content .date {
+  font-style: italic;
+  color: #64748b;
+}
+
+.timeline-content ul {
+  margin-top: 0.5rem;
+  padding-left: 2rem;
+  color: #cbd5e1;
+}
+.experience-item ul {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.experience-item ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+}
+
+.experience-item ul li::before {
+  content: "✔"; /* or use a unicode bullet or emoji */
+  position: absolute;
+  left: 0;
+  color: #38bdf8;
+}
+.experience-item {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 2rem;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.experience-item h3 {
+  color: #38bdf8;
+  margin-bottom: 0.2rem;
+}
+.experience-item + .experience-item {
+  border-top: 1px solid #334155;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.experience-item h3 {
+  color: #38bdf8;
+  margin-bottom: 0.25rem;
+}
+
+.experience-item p {
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+
+
+/* ========================================================================== */
+/* Contact Section */
+/* ========================================================================== */
+
+.contact-section {
+    max-width: 100px;
+    margin: 2rem 1rem;
+    padding-bottom: 5rem;
+}
+
+form#contact-form {
+    width: 100%;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
 .form-group input,
 .form-group textarea {
-  width: 100%;
-  padding: 1rem 0.75rem;
-  font-size: 1.1rem;
-  border: 2px solid #38bdf8;
-  border-radius: 0.5rem;
-  background: #1e293b;
-  color: #e0e0e0;
-  transition: border-color 0.3s ease;
-  outline: none;
-  resize: vertical;
+    width: 100%;
+    padding: 1rem 0.25rem;
+    font-size: 1.1rem;
+    border: 2px solid #38bdf8; /* Accent border for inputs */
+    border-radius: 0.5rem;
+    background: #1e293b; /* Dark background for inputs */
+    color: #e0e0e0; /* Light text color for input content */
+    transition: border-color 0.3s ease;
+    outline: none; /* Remove default outline */
+    resize: vertical; /* Allow vertical resizing of textarea */
 }
 
+/* Placeholder text styling */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #94a3b8;
-  font-style: italic;
+    color: #94a3b8;
+    font-style: italic;
 }
 
+/* Focus state for inputs */
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #0ea5e9;
+    border-color: #0ea5e9; /* Brighter accent on focus */
 }
 
+/* Floating label for form fields */
 label {
-  position: absolute;
-  top: -1.2rem;
-  left: 0.75rem;
-  font-size: 0.9rem;
-  color: #38bdf8;
-  font-weight: 600;
-  pointer-events: none;
-  background: #0f172a;
-  padding: 0 0.25rem;
+    position: absolute;
+    top: -1.2rem;
+    left: 0.75rem;
+    font-size: 0.9rem;
+    color: #38bdf8; /* Accent color for labels */
+    font-weight: 600;
+    pointer-events: none; /* Allow clicks through label to input */
+    background: #0f172a; /* Match body background to "cut out" label */
+    padding: 0 0.25rem;
 }
 
+/* Submit button specific styles */
 form#contact-form .btn-submit {
-  display: block;
-  margin: 0 auto;
-  padding: 1rem 3rem;
-  font-size: 1.1rem;
-  border-radius: 999px;
-  background: #0ea5e9;
-  color: #fff;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    border-radius: 999px;
+    background: #0ea5e9; /* Brighter accent for submit */
+    color: #fff; /* White text on submit button */
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 form#contact-form .btn-submit:hover {
-  background: #38bdf8;
-  transform: scale(1.05);
+    background: #38bdf8; /* Accent color on hover */
+    transform: scale(1.05);
 }
 
+/* Invalid input styling */
 input:invalid,
 textarea:invalid {
-  border-color: #f87171;
+    border-color: #f87171; /* Red border for invalid input */
 }
 
 .contact-info {
-  margin-top: 2rem;
-  font-size: 1.1rem;
-  color: #94a3b8;
-  text-align: center;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: #94a3b8;
+    text-align: center;
 }
 
 .contact-info a {
-  color: #38bdf8;
-  font-weight: 600;
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+/* ========================================================================== */
+/* Certifications and Skills Sections (Tile-based Layout) */
+/* ========================================================================== */
+
+.tiles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* space between tiles */
+    justify-content: center; /* centers tiles horizontally */
+}
+
+/* Styles for an individual tile */
+.certification-tile {
+    background: #1e293b;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 1rem 2rem;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+
+    flex: 1 1 250px; /* base size 250px, can grow or shrink */
+    max-width: 350px; /* max width for each tile */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0; /* no extra margin, gap handles spacing */
+}
+
+.certification-tile:hover,
+.certification-tile:focus {
+    transform: translateY(-8px); /* Lift on hover/focus */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    outline: none; /* Remove default focus outline */
+}
+
+.certification-tile .tile-badge-wrapper {
+    height: 140px; /* uniform height for all logos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.certification-tile .tile-badge {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: contain; /* prevent distortion */
+}
+
+.certification-tile .tile-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    color: #f1f5f9; /* light text */
+}
+
+
+
+/* Common styles for sections that use tiles */
+.section {
+    padding: 3rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #f1f5f9; /* Section heading color */
+}
+
+/* Container for all tiles */
+.tiles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 1.8rem;
+    justify-items: center; /* Center items in the grid */
+    padding: 0 1rem;
+}
+
+/* Styles for an individual tile */
+.tile {
+    background: #1e293b; /* Dark background for tiles */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 1rem 2rem;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+    width: 150px; /* Fixed width for tiles */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Distribute space for content */
+}
+
+.tile:hover,
+.tile:focus {
+    transform: translateY(-8px); /* Lift on hover/focus */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    outline: none; /* Remove default focus outline */
+}
+
+/* Badge/Icon within the tile */
+.tile-badge {
+    max-width: 80px;
+    max-height: 80px;
+    margin-bottom: 1rem;
+    object-fit: contain; /* Ensure image fits without distortion */
+}
+
+/* Title within the tile */
+.tile-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    color: #f1f5f9; /* Light text for tile titles */
+}
+
+/* Star rating container */
+.stars {
+    color: #f5a623; /* Gold color for stars */
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.15rem; /* Small gap between stars */
+}
+
+/* Filled star icon */
+.stars .fa-star {
+    color: #f5a623;
+}
+
+/* Empty star icon */
+.stars .far.fa-star {
+    color: #ccc; /* Lighter color for empty stars */
+}
+.tile-badge-wrapper {
+  height: 80px; /* same for all logos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.tile-badge {
+  max-height: 100%;
+  max-width: 80px;
+  object-fit: contain;
 }
 
 /* ========================================================================== */
 /* Dark Mode Styles */
 /* ========================================================================== */
+
+.dark-mode .home-section {
+  background-color: #f1f5f9;
+  color: #f1f5f9;
+}
+
 body.dark-mode {
-  background: #f9fafb;
-  color: #1e293b;
+    background: #f9fafb; /* Light background for dark mode */
+    color: #1e293b; /* Dark text color for dark mode */
 }
 
 body.dark-mode a {
-  color: #2563eb;
+    color: #2563eb; /* Blue accent for links in dark mode */
 }
 
 body.dark-mode .navbar {
-  background: #f3f4f6cc;
-  color: #1e293b;
+    background: #f3f4f6cc; /* Semi-transparent light background */
+    color: #1e293b;
 }
 
 body.dark-mode .navbar.scrolled {
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 body.dark-mode .nav-logo,
 body.dark-mode .nav-link {
-  color: #2563eb;
+    color: #2563eb; /* Blue accent for nav elements */
 }
 
 body.dark-mode .nav-link.active {
-  color: #1e293b;
+    color: #1e293b; /* Darker color for active nav link */
 }
 
 body.dark-mode .nav-link:hover::after,
 body.dark-mode .nav-link.active::after {
-  background-color: #2563eb;
+    background-color: #2563eb;
 }
 
 body.dark-mode .home-image img {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 body.dark-mode .project-card,
 body.dark-mode .experience-item,
-body.dark-mode .experience-item ul {
-  background: #e0e7ff;
-  color: #1e293b;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+body.dark-mode .tile { /* Also apply to skill/cert tiles */
+    background: #e0e7ff; /* Light blue background for cards/tiles */
+    color: #1e293b;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 body.dark-mode .form-group input,
 body.dark-mode .form-group textarea {
-  background: #fff;
-  color: #1e293b;
-  border-color: #2563eb;
+    background: #fff; /* White background for inputs */
+    color: #1e293b;
+    border-color: #2563eb; /* Blue border for inputs */
 }
 
 body.dark-mode .form-group input:focus,
 body.dark-mode .form-group textarea:focus {
-  border-color: #3b82f6;
+    border-color: #3b82f6; /* Lighter blue on focus */
 }
 
 body.dark-mode label {
-  color: #2563eb;
-  background: #f9fafb;
+    color: #2563eb;
+    background: #f9fafb; /* Match body background */
 }
 
 body.dark-mode .btn-submit {
-  background: #2563eb;
-  color: #fff;
+    background: #2563eb;
+    color: #fff;
 }
 
 body.dark-mode .btn-submit:hover {
-  background: #3b82f6;
+    background: #3b82f6;
 }
 
-body.dark-mode .contact-info p {
-  color: #000;
+body.dark-mode .contact-info p,
+body.dark-mode .tile-title,
+body.dark-mode h2 { /* Ensure headings are dark in dark mode */
+    color: #1e293b;
 }
 
 /* ========================================================================== */
-/* Dark Mode Toggle */
+/* Dark Mode Toggle Button */
 /* ========================================================================== */
+
 .dark-mode-toggle {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  background: #38bdf8;
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
-  color: #0f172a;
-  font-size: 1.5rem;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease;
-  z-index: 1000;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: #38bdf8; /* Accent color for toggle */
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    color: #0f172a; /* Dark text for toggle icon */
+    font-size: 1.5rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition */
+    z-index: 1000;
 }
 
 .dark-mode-toggle:hover {
-  background: #0ea5e9;
+    background: #0ea5e9;
 }
 
 /* ========================================================================== */
-/* Responsive Design */
+/* Responsive Design (Media Queries) */
 /* ========================================================================== */
+
 @media (max-width: 768px) {
-  .navbar {
-    padding: 1rem 1.5rem;
-  }
+    .navbar {
+        padding: 1rem 1.5rem; /* Adjust padding for smaller screens */
+        left: 10px; /* Adjust positioning for smaller screens */
+        right: 10px;
+    }
 
-  .nav-links {
-    display: none;
-  }
+    .nav-links {
+        display: none; /* Hide nav links by default on mobile */
+    }
 
-  .nav-toggle {
-    display: block;
-  }
+    .nav-toggle {
+        display: block; /* Show hamburger icon on mobile */
+    }
 
-  .nav-links.mobile-show {
-    display: flex;
-    flex-direction: column;
-    background: #1e293b;
-    position: fixed;
-    top: 70px;
-    right: 0;
-    width: 70vw;
-    height: 100vh;
-    padding: 2rem 1.5rem;
-    gap: 1.5rem;
-    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.5);
-    z-index: 998;
-  }
+    /* Mobile navigation menu when active */
+    .nav-links.mobile-show {
+        display: flex;
+        flex-direction: column;
+        background: #1e293b;
+        position: fixed;
+        top: 70px; /* Position below navbar */
+        right: 0;
+        width: 70vw; /* Occupy 70% of viewport width */
+        height: 100vh; /* Full height */
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+        box-shadow: -2px 0 15px rgba(0, 0, 0, 0.5); /* Shadow for slide-in effect */
+        z-index: 998;
+    }
 
-  .home-container {
-    flex-direction: column;
-    text-align: center;
-  }
+    .home-container {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+    }
 
-  .home-image img {
-    width: 220px;
-    margin: auto;
-  }
+    .home-image img {
+        width: 220px; /* Adjust image size */
+        margin: auto;
+    }
+
+    /* Adjust padding for sections on smaller screens */
+    .section {
+        padding: 5rem 1rem;
+    }
+
+    /* Adjust project card width */
+    .project-card {
+        width: calc(100% - 2rem); /* Full width minus padding */
+        max-width: 300px; /* Max width for individual cards */
+    }
+
+    /* Adjust tile grid for smaller screens */
+    .tiles-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Smaller min width for tiles */
+        gap: 1rem;
+    }
+
+    .tile {
+        width: 120px; /* Smaller fixed width for tiles */
+        padding: 1rem 0.5rem 1.5rem;
+    }
+
+    .tile-badge {
+        max-width: 60px;
+        max-height: 60px;
+    }
+
+    .tile-title {
+        font-size: 0.9rem;
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .home-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .btn-group {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 0.8rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.5rem;
+    }
+
+    .nav-links.mobile-show {
+        width: 85vw; /* Take up more width on very small screens */
+    }
 }

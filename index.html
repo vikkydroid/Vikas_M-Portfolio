@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Vikas M - RPA Developer, Python and AI Enthusiast" />
-  <title>Vikas M | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of Vikas M" />
+    <title>Vikas M | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /> 
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <nav class="navbar" id="navbar" role="navigation">
-    <div class="nav-logo" aria-label="Portfolio Logo">Vikas M</div>
-    <button class="nav-toggle" aria-label="Toggle navigation menu">
-      <span class="hamburger"></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="#home" class="nav-link active">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#experience" class="nav-link">Experience</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-  </nav>
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-logo" aria-label="Portfolio Logo">Vikas M</div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+            <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#certifications" class="nav-link">Certifications</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
 
-  <div class="background-shapes" aria-hidden="true">
-    <div class="shape shape1"></div>
-    <div class="shape shape2"></div>
-    <div class="shape shape3"></div>
-  </div>
+    <div class="background-shapes" aria-hidden="true">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+    </div>
 
-  <main>
-    <section id="home" class="section home-section">
+    <main>
+    <section id="home" class="section home-section" aria-labelledby="home-heading">
       <div class="home-container">
         <div class="home-text">
-          <h1>Hello, <span class="typing" aria-hidden="true"></span></h1>
-          <p class="subtitle"> Software Developer @Novigo Solutions</p>
+          <h1 id="home-heading" aria-label="Greeting and typing introduction">
+            Hello,<br>
+            <span class="typing-container" aria-live="polite" aria-atomic="true">
+              <span class="typing" aria-hidden="true"></span>
+            </span>
+          </h1>
+          <p class="subtitle">Software Developer @Novigo Solutions</p>
           <div class="btn-group">
-            <a href="assets/Vikas_M_Resume.pdf" target="_blank" class="btn">Download Resume</a>
-            <a href="#contact" class="btn btn-outline">Contact Me</a>
+            <a href="assets/Vikas_M_Resume.pdf" target="_blank" class="btn" aria-label="Download Vikas M's Resume">Download Resume</a>
+            <a href="#contact" class="btn btn-outline" aria-label="Contact Vikas M">Contact Me</a>
           </div>
         </div>
         <div class="home-image">
@@ -47,52 +54,136 @@
       </div>
     </section>
 
-    <section id="about" class="section about-section">
-      <h2>About Me</h2>
+
+<section id="about" class="about-section" aria-labelledby="about-heading">
+  <h2 id="about-heading">About Me</h2>
+  
+  <div class="about-content">
+    
+    <div class="about-text">
       <p>
-        <ul>
-        <li>Software Developer with over 2 years of experience in Automation and Data Field.</li><br>
-        <li><b>3x </b>UiPath Certified Developer (UIADP, UIAIA, UIABA) and <b>6x</b> UiPath Community Awardee</li><br>
-        <li>Skilled in C#, Python, SQL, and Azure AI. Passionate about cloud technologies, DevOps, and data engineering.</li><br>
-        <li>Collaborative and fast learner thriving in dynamic tech environments.</li><br>
-        <li>My aspirations include delving deeper into the realms of AI/ML and Data Engineering, 
-            where I aim to leverage these technologies to drive transformative change and unlock new opportunities for growth and innovation.</li>
-        </ul>
-        </p>
-    </section>
+        I’m a <strong>Software Developer</strong> with over <strong>2 years</strong> of experience in automation and data field.<br><br>
+        Passionate about <strong>UiPath Development</strong>, <strong>Cloud Technologies</strong>, and <strong>AI/ML</strong>. I enjoy working in dynamic environments where continuous learning drives innovation.
+      </p>
+      
+      <blockquote>
+        <strong>“Technology is best when it brings people together.”</>
+      </blockquote>
+    </div>
+    
+    <aside class="about-skills">
+      <ul>
+        <li>3x UiPath Certified (UIADP, UIAIA, UIABA)</li>
+        <li>6x UiPath Community Awardee</li>
+        <li>Skilled in C#, Python, SQL, Azure AI</li>
+        <li>Cloud & DevOps Enthusiast</li>
+        <li>Quick learner thriving in fast-paced teams</li>
+      </ul>
+    </aside>
+    
+  </div>
+</section>
 
-    <section id="projects" class="section projects-section">
-      <h2>Projects</h2>
-      <div class="project-list">
-        <div class="project-card" tabindex="0" aria-label="Jarvis Voice Assistant project">
-          <div class="project-icon"><i class="fas fa-robot"></i></div>
-          <h3>Jarvis Voice Assistant</h3>
-          <p>Speech recognition, text-to-speech, and task automation using Python.</p>
-        </div>
-        <div class="project-card" tabindex="0" aria-label="Local File Sharing Web App project">
-          <div class="project-icon"><i class="fas fa-qrcode"></i></div>
-          <h3>Local File Sharing Web App</h3>
-          <p>Python-based server with QR code mobile access and responsive UI.</p>
-        </div>
-        <div class="project-card" tabindex="0" aria-label="Pothole Detection project">
-          <div class="project-icon"><i class="fas fa-car-crash"></i></div>
-          <h3>Pothole Detection for Road Safety</h3>
-          <p>YOLOv5 model for pothole detection with mobile interface and maps integration.</p>
-        </div>
-      </div>
-    </section>
+<section id="projects" class="section projects-section" aria-labelledby="projects-heading">
+  <h2 id="projects-heading">Projects</h2>
+  <div class="project-list">
 
-    <section id="experience" class="section experience-section">
-      <h2>Experience</h2>
-      <div class="experience-item">
+    <div class="project-card" tabindex="0" aria-label="Jarvis Voice Assistant project">
+      <div class="project-icon"><i class="fas fa-robot"></i></div>
+      <h3>Jarvis Voice Assistant</h3>
+      <p>Speech recognition, text-to-speech, and task automation using Python.</p>
+      <p><span class="languages-header"><strong>Libraries Used:</strong></span></p>
+      <ul class="languages-list">
+        <li>Pyttsx3</li>
+        <li>Google Text-to-Speech (gTTS)</li>
+        <li>SpeechRecognition</li>
+      </ul>
+    </div>
+
+    <div class="project-card" tabindex="0" aria-label="Local File Sharing Web App project">
+      <div class="project-icon"><i class="fas fa-qrcode"></i></div>
+      <h3>Local File Sharing Web App</h3>
+      <p>Python-based server with QR code mobile access and responsive UI.</p>
+      <p><span class="languages-header"><strong>Languages Used:</strong></span></p>
+      <ul class="languages-list">
+        <li>Python</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+    </div>
+
+    <div class="project-card" tabindex="0" aria-label="Pothole Detection project">
+      <div class="project-icon"><i class="fas fa-car-crash"></i></div>
+      <h3>Pothole Detection for Road Safety</h3>
+      <p>YOLOv5 model for pothole detection with mobile interface and maps integration.</p>
+      <p><span class="languages-header"><strong>Languages Used:</strong></span></p>
+      <ul class="languages-list">
+        <li>Python</li>
+        <li>JavaScript</li>
+      </ul>
+    </div>
+
+    <div class="project-card" tabindex="0" aria-label="Smart Regulator project">
+      <div class="project-icon"><i class="fas fa-fan"></i></div>
+      <h3>Smart Regulator</h3>
+      <p>Designed and implemented a Remote/IOT-based AC ceiling fan regulator using ESP32.</p>
+      <p><span class="languages-header"><strong>Tools & Software Used:</strong></span></p>
+      <ul class="languages-list">
+        <li>ESP32</li>
+        <li>Arduino IDE</li>
+      </ul>
+    </div>
+    <div class="project-card" tabindex="0" aria-label="Voting Machine project">
+      <div class="project-icon"><i class="fas fa-vote-yea"></i></div>
+      <h3>Voting Machine</h3>
+      <p>Developed a Voting Machine for small-scale elections.</p>
+      <p><span class="languages-header"><strong>Software Used:</strong></span></p>
+      <ul class="languages-list">
+        <li>VS Code</li>
+      </ul>
+      <p><span class="languages-header"><strong>Language:</strong></span></p>
+      <ul class="languages-list">
+        <li>C</li>
+      </ul>
+    </div>
+        <div class="project-card" tabindex="0" aria-label="Employee Management System project">
+      <div class="project-icon"><i class="fas fa-vote-yea"></i></div>
+      <h3>Employee Management System</h3>
+      <p>Developed a Employee Management System.</p>
+      <p><span class="languages-header"><strong>Software Used:</strong></span></p>
+      <ul class="languages-list">
+        <li>VS Code</li>
+      </ul>
+      <p><span class="languages-header"><strong>Language:</strong></span></p>
+      <ul class="languages-list">
+        <li>C</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section id="experience" class="section experience-section" aria-labelledby="experience-heading">
+  <h2 id="experience-heading">Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
         <h3>Software Engineer - Novigo Solutions</h3>
-        <p><span class="company">Novigo Solutions</span> <span class="date">May 2023 – Present</span></p>
+        <p><span class="company">Novigo Solutions</span> <span class="date">May 2023 - Present</span></p>
         <ul>
           <li>Led automation for 8+ client processes across logistics, HR, and banking.</li>
           <li>Built invoice and PO automation with 90% touchless processing.</li>
         </ul>
       </div>
-      <div class="experience-item">
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
         <h3>Full Stack Web Development Intern - Varcons Inc.</h3>
         <p><span class="company">Varcons Inc.</span> <span class="date">Apr 2023 – May 2023</span></p>
         <ul>
@@ -100,37 +191,156 @@
           <li>Implemented SQL databases for data collection and sorting.</li>
         </ul>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="contact" class="section contact-section">
-      <h2>Contact Me</h2>
-      <form id="contact-form" novalidate>
-        <div class="form-group">
-          <input type="text" id="name" name="name" required autocomplete="name" />
-          <label for="name">Name</label>
-          <span class="input-bar"></span>
-        </div>
-        <div class="form-group">
-          <input type="email" id="email" name="email" required autocomplete="email" />
-          <label for="email">Email</label>
-          <span class="input-bar"></span>
-        </div>
-        <div class="form-group">
-          <textarea id="message" name="message" rows="6" required></textarea>
-          <label for="message">Message</label>
-          <span class="input-bar"></span>
-        </div>
-        <button type="submit" class="btn btn-submit">Send Message</button>
-      </form>
-      <div class="contact-info">
-        <p>Linkedin Profile:<a href="https://www.linkedin.com/in/vikasm-01/">My Linkedin Profile</a></p>
-        <p>Email: <a href="mailto:acharyavikas231@gmail.com">acharyavikas231@gmail.com</a></p>
-        <p>Phone: <a href="tel:+919741812636">+91-9741812636</a></p>
-      </div>
-    </section>
-  </main>
 
-  <button class="dark-mode-toggle" aria-label="Toggle dark mode">🌓</button>
-  <script src="js/script.js"></script>
+
+        <section id="certifications" class="section certifications-section" aria-labelledby="certifications-heading">
+            <h2 id="certifications-heading">Certifications</h2>
+            <div class="tiles-container certifications-tiles">
+                <div class="certification-tile">
+                   <div class="tile-badge-wrapper">
+                    <img src="assets\images\Certifications\AI900.png" alt="Azure AI Fundamentals Badge" class="tile-badge" />
+                   </div>
+                    <p class="tile-title">Microsoft Certified:<br>Azure AI Fundamentals (AI-900)</p>
+                </div>
+
+                <div class="certification-tile">
+                  <div class="tile-badge-wrapper">
+                    <img src="assets\images\Certifications\Ui-ADP.avif" alt="UiPath Automation Developer Badge" class="tile-badge" />
+                  </div>
+                    <p class="tile-title">UiPath Certified Automation Developer Professional(UIADP)</p>
+                </div>
+                <div class="certification-tile">
+                  <div class="tile-badge-wrapper">
+                    <img src="assets\images\Certifications\UiPath_SpecializedAI.avif" alt="UiPath AI Associate Badge" class="tile-badge" />
+                  </div>
+                    <p class="tile-title">UiPath Certified Specialized AI Associate(UIAIA)</p>
+                </div>
+                <div class="certification-tile">
+                  <div class="tile-badge-wrapper">
+                    <img src="assets\images\Certifications\UiPath-BA_Associate.avif" alt="UiPath BA Associate Badge" class="tile-badge" />
+                  </div>
+                    <p class="tile-title">UiPath Certified Business Analyst Associate(UIAIA)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills-section" aria-labelledby="skills-heading">
+            <h2 id="skills-heading">Technical Skills</h2>
+            <div class="tiles-container skills-tiles">
+                <div class="tile">
+                  <div class="tile-badge-wrapper">
+                    <img src="assets/images/Skills/Python.png" alt="Python Logo" class="tile-badge" />
+                  </div>
+                    <p class="tile-title">Python</p>
+                    <div class="stars" aria-label="Skill rating: 4 out of 5 stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="tile">
+                  <div class="tile-badge-wrapper">
+                    <img src="assets\images\Skills\C.svg" alt="C Logo" class="tile-badge" />
+                  </div>
+                    <p class="tile-title">C</p>
+                    <div class="stars" aria-label="Skill rating: 4 out of 5 stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="tile">
+                  <div class="tile-badge-wrapper">
+                    <img src="assets/images/Skills/SQL.png" alt="SQL Logo" class="tile-badge" />
+                  </div>
+                    <p class="tile-title">SQL</p>
+                    <div class="stars" aria-label="Skill rating: 3 out of 5 stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="tile">
+                  <div class="tile-badge-wrapper">
+                    <img src="assets\images\Skills\UiPath.png" alt="UiPath Logo" class="tile-badge" />
+                  </div>
+                    <p class="tile-title">UiPath</p>
+                    <div class="stars" aria-label="Skill rating: 5 out of 5 stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="tile">
+                    <img src="assets\images\Skills\Postman.png" alt="Postman Logo" class="tile-badge" />
+                    <p class="tile-title">Postman</p>
+                    <div class="stars" aria-label="Skill rating: 5 out of 5 stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="tile">
+                  <div class="tile-badge-wrapper">
+                    <img src="assets\images\Skills\HTML.png" alt="HTML Logo" class="tile-badge" />
+                  </div>
+                    <p class="tile-title">HTML</p>
+                    <div class="stars" aria-label="Skill rating: 4 out of 5 stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                </div>
+                  <div class="tile">
+                  <div class="tile-badge-wrapper">
+                    <img src="assets\images\Skills\CSS.png" alt="CSS Logo" class="tile-badge" />
+                  </div>
+                    <p class="tile-title">CSS</p>
+                    <div class="stars" aria-label="Skill rating: 3 out of 5 stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                </div>
+                    <div class="tile">
+                  <div class="tile-badge-wrapper">
+                    <img src="assets\images\Skills\JS.png" alt="JS Logo" class="tile-badge" />
+                  </div>
+                    <p class="tile-title">JS</p>
+                    <div class="stars" aria-label="Skill rating: 2 out of 5 stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="tile">
+                  <div class="tile-badge-wrapper">
+                    <img src="assets\images\Skills\Microsoft_VB.NET.png" alt="VB.Net Logo" class="tile-badge" />
+                  </div>
+                    <p class="tile-title">Microsoft VB.Net</p>
+                    <div class="stars" aria-label="Skill rating: 2 out of 5 stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                </div>
+        </section>
+
+        <section id="contact" class="section contact-section" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Me</h2>
+            <form id="contact-form" novalidate aria-label="Contact form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required autocomplete="name" aria-required="true" />
+                    <label for="name">Name</label>
+                    <span class="input-bar"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required autocomplete="email" aria-required="true" />
+                    <label for="email">Email</label>
+                    <span class="input-bar"></span>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+                    <label for="message">Message</label>
+                    <span class="input-bar"></span>
+                </div>
+                <button type="submit" class="btn btn-submit">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <p>LinkedIn Profile: <a href="https://www.linkedin.com/in/vikasm-01/" target="_blank" rel="noopener noreferrer">My LinkedIn Profile</a></p>
+                <p>Email: <a href="mailto:acharyavikas231@gmail.com">acharyavikas231@gmail.com</a></p>
+                <p>Phone: <a href="tel:+919741812636">+91-9741812636</a></p>
+            </div>
+        </section>
+    </main>
+
+    <button class="dark-mode-toggle" aria-label="Toggle dark mode">🌓</button>
+    <script src="js/script.js"></script>
 </body>
 </html>
